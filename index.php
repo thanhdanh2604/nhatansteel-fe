@@ -9,7 +9,7 @@
 
   <!-- Hero Banner -->
   <section class="section-banner">
-    <div class="carousel" data-flickity>
+    <div id="customCarousel" class="carousel">
       <div class="carousel-cell">
         <img src="assets/images/banner01.jpg" alt="banner" class="img-fluid">
         <div class="box-content">
@@ -56,6 +56,22 @@
         </div>
       </div>
     </div>
+
+    <!-- 👇 Custom buttons & dots -->
+    <div class="box-nav-bottom">
+      <div class="container">
+        <div class="flickity-custom-controls">
+          <button id="prevBtn" class="btn-custom-nav">
+            <img src="assets/images/icons/i-arrow-left-white.svg" alt="arrow left" class="img-fluid" width="16">
+          </button>
+          <div id="customDots" class="d-flex gap-2"></div>
+          <button id="nextBtn" class="btn-custom-nav">
+            <img src="assets/images/icons/i-arrow-right-white.svg" alt="arrow right" class="img-fluid" width="16">
+          </button>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <section class="about-section">
@@ -86,7 +102,7 @@
       <div class="row text-center mt-5 stats-row">
         <div class="col-md-4 mb-4">
           <img src="assets/images/icons/i-construction-site.svg" alt="Dự án" class="mb-4" style="height: 120px;">
-          <h4><span class="count-number" data-target="1000">0</span>+</h4>
+          <h4><span class="count-number" data-target="500">0</span>+</h4>
           <p class="mb-0">Dự án</p>
         </div>
         <div class="col-md-4 mb-4">
@@ -115,7 +131,7 @@
         <div class="col-md-7">
           <div class="row gy-3 gx-2">
             <div class="col-sm-6">
-              <div class="product-item active">
+              <a href="#" class="product-item active">
                 <div class="product-item-img">
                   <img src="assets/images/sanpham01.jpg" alt="" class="img-fluid">
                 </div>
@@ -123,10 +139,10 @@
                   <p class="mb-0">Mô hình nhà xưởng tiêu chuẩn</p>
                   <span class="arrow"><img src="assets/images/icons/i-arrow-right.svg" alt="arrow" class="img-fluid" width="22"></span>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="col-sm-6">
-              <div class="product-item">
+              <a href="#" class="product-item">
                 <div class="product-item-img">
                   <img src="assets/images/sanpham01.jpg" alt="" class="img-fluid">
                 </div>
@@ -134,10 +150,10 @@
                   <p class="mb-0">Hệ thống bao che hoàn thiện</p>
                   <span class="arrow"><img src="assets/images/icons/i-arrow-right.svg" alt="arrow" class="img-fluid" width="22"></span>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="col-sm-6">
-              <div class="product-item">
+              <a href="#" class="product-item">
                 <div class="product-item-img">
                   <img src="assets/images/sanpham01.jpg" alt="" class="img-fluid">
                 </div>
@@ -145,10 +161,10 @@
                   <p class="mb-0">Hệ thống khung tiêu chuẩn</p>
                   <span class="arrow"><img src="assets/images/icons/i-arrow-right.svg" alt="arrow" class="img-fluid" width="22"></span>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="col-sm-6">
-              <div class="product-item">
+              <a href="#" class="product-item">
                 <div class="product-item-img">
                   <img src="assets/images/sanpham01.jpg" alt="" class="img-fluid">
                 </div>
@@ -156,10 +172,11 @@
                   <p class="mb-0">Phụ kiện</p>
                   <span class="arrow"><img src="assets/images/icons/i-arrow-right.svg" alt="arrow" class="img-fluid" width="22"></span>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="col-sm-6">
-              <div class="product-item">
+              <a href="#" class="product-item">
+
                 <div class="product-item-img">
                   <img src="assets/images/sanpham01.jpg" alt="" class="img-fluid">
                 </div>
@@ -167,7 +184,7 @@
                   <p class="mb-0 small fw-bold text-uppercase">Chi tiết kết cấu</p>
                   <span class="arrow"><img src="assets/images/icons/i-arrow-right.svg" alt="arrow" class="img-fluid" width="22"></span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
