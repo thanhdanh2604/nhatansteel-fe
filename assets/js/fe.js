@@ -1,5 +1,5 @@
+// Khởi tạo LightGallery cho ảnh trong tab
 const serviceBoxes = document.querySelectorAll('.service-box');
-
 serviceBoxes.forEach((box) => {
     box.addEventListener('click', () => {
         serviceBoxes.forEach((b) => {
@@ -10,28 +10,20 @@ serviceBoxes.forEach((box) => {
     });
 });
 
-
+// navbar scroll
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
 
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentScroll > lastScrollTop && currentScroll > 100) {
-            // Scroll xuống
-            navbar.classList.add('navbar-hide');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add('scrolled');
         } else {
-            // Scroll lên
-            navbar.classList.remove('navbar-hide');
+            navbar.classList.remove('scrolled');
         }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 });
 
+// search overlay
 document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.querySelector('.nav-link-search');
     const searchOverlay = document.querySelector('.navbar-search-overlay');
@@ -57,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+// dropdown hover
 document.addEventListener('DOMContentLoaded', function () {
     const dropdowns = document.querySelectorAll('.navbar .dropdown');
 
@@ -76,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// ripple effect
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.ripple-btn').forEach(btn => {
         btn.addEventListener('click', function (e) {
@@ -95,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+// Khởi tạo LightGallery cho ảnh trong tab
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementById("mainNav");
 
@@ -153,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+// Smooth scroll to section
 document.addEventListener("DOMContentLoaded", () => {
     const sidebarLinks = document.querySelectorAll(".about-sidebar a");
     const sections = document.querySelectorAll(".section-block");
@@ -210,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Tab system for Vision, Mission, and Core Values
 document.addEventListener("DOMContentLoaded", () => {
     // COMMON fade + highlight logic for tabs
     function createTabSystem({ tabSelector, contentSelector, highlightId }) {
@@ -278,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Tab system for About Us
 document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanes = document.querySelectorAll(".tab-pane");
@@ -306,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Tab system for About Us with sidebar
 document.addEventListener("DOMContentLoaded", () => {
     const headerOffset = 80;
 
@@ -394,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+// Timeline hover effect
 document.addEventListener("DOMContentLoaded", () => {
     const timelineItems = document.querySelectorAll(".timeline-item");
 
@@ -412,6 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Timeline progress bar
 document.addEventListener("DOMContentLoaded", () => {
     const progress = document.querySelector(".timeline-progress");
     const items = document.querySelectorAll(".timeline-item");
@@ -434,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Dropdown click to navigate
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.navbar .dropdown-toggle');
 
@@ -448,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// Counter animation
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     let startTime = null;
@@ -526,9 +521,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// banner
+// Khởi tạo Flickity cho carousel banner
 document.addEventListener("DOMContentLoaded", function () {
     const carouselElem = document.getElementById('customCarousel');
+    if (!carouselElem) return; // Ngăn lỗi nếu không có phần tử
     const flkty = new Flickity(carouselElem, {
         cellAlign: 'left',
         contain: true,
@@ -560,4 +556,82 @@ document.addEventListener("DOMContentLoaded", function () {
     // Bấm nút
     prevBtn.addEventListener('click', () => flkty.previous());
     nextBtn.addEventListener('click', () => flkty.next());
+});
+
+// Tab system for Structure Detail
+document.addEventListener("DOMContentLoaded", () => {
+    const tabLinks = document.querySelectorAll(".structure-detail-section .nav-link");
+    const tabPanes = document.querySelectorAll(".structure-detail-section .tab-pane");
+
+    tabLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            const target = link.dataset.tab;
+
+            tabLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+
+            tabPanes.forEach(pane => {
+                pane.classList.add("d-none");
+                pane.classList.remove("active");
+            });
+
+            const activePane = document.getElementById(target);
+            if (activePane) {
+                activePane.classList.remove("d-none");
+                setTimeout(() => activePane.classList.add("active"), 10);
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.steel-tabs-sidebar');
+    const sidebarWrapper = document.querySelector('.steel-tabs-sidebar-wrapper');
+    const sidebarLinks = sidebar.querySelectorAll('a');
+    const sections = document.querySelectorAll('.section-block');
+    const headerOffset = 100;
+
+    // Smooth scroll khi click menu
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    // Scroll highlight và cuộn sidebar theo
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset + headerOffset + 1;
+
+        sections.forEach(section => {
+            const id = section.getAttribute('id');
+            const link = sidebar.querySelector(`a[href="#${id}"]`);
+            if (
+                section.offsetTop <= scrollPosition &&
+                section.offsetTop + section.offsetHeight > scrollPosition
+            ) {
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                if (link) {
+                    link.classList.add('active');
+
+                    // ⭐ Cuộn mục đó vào giữa sidebar
+                    const linkOffsetTop = link.offsetTop;
+                    const wrapperHeight = sidebarWrapper.clientHeight;
+                    const targetScrollTop = linkOffsetTop - wrapperHeight / 2 + link.offsetHeight / 2;
+
+                    sidebarWrapper.scrollTo({
+                        top: targetScrollTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
 });

@@ -218,12 +218,13 @@ section {
 
 .navbar {
   padding: 35px 0;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-  will-change: transform, opacity;
+  transition: all 0.3s ease-in-out;
 }
-.navbar.navbar-hide {
-  transform: translateY(-100%);
-  opacity: 0;
+.navbar.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 20px 0;
 }
 .navbar .dropdown-menu {
   position: absolute;
@@ -939,6 +940,9 @@ section {
 .news-section .highlight-news h6 {
   color: #fff;
 }
+.news-section .highlight-news p {
+  color: #fff;
+}
 .news-section .news-item .arrow-icon {
   font-size: 1.2rem;
   display: inline-block;
@@ -1566,8 +1570,6 @@ section {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid #d9d9d9;
-  padding-bottom: 35px;
 }
 .box-big-img img {
   width: 100%;
@@ -1576,6 +1578,11 @@ section {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.section-block {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 70px;
 }
 
 .list-products {
@@ -1651,6 +1658,12 @@ section {
   border-bottom: 3px solid transparent;
   white-space: nowrap;
   transition: 0.3s;
+}
+.structure-detail-section .nav-tabs-scroll .nav-tabs button:first-child {
+  padding-left: 0;
+}
+.structure-detail-section .nav-tabs-scroll .nav-tabs button:last-child {
+  padding-right: 0;
 }
 .structure-detail-section .nav-tabs-scroll .nav-tabs button.active {
   color: #283678;
@@ -2496,6 +2509,18 @@ section {
 
 .navbar-toggler[aria-expanded=true] .navbar-toggler-icon {
   border-color: transparent;
+}
+
+.steel-tabs-sidebar-wrapper {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.steel-tabs-sidebar-wrapper a.active {
+  font-weight: bold;
+  color: #f7941e;
 }
 
 @media (max-width: 991.98px) {

@@ -254,12 +254,18 @@ section {
 
 .navbar {
   padding: 35px 0;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-  will-change: transform, opacity;
+  transition: all 0.3s ease-in-out;
 
-  &.navbar-hide {
-    transform: translateY(-100%);
-    opacity: 0;
+  // &.navbar-hide {
+  //   transform: translateY(-100%);
+  //   opacity: 0;
+  // }
+
+  &.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding: 20px 0;
   }
 
   .dropdown-menu {
@@ -1123,6 +1129,10 @@ $blue-dark: #0b2c6b;
     h6 {
       color: #fff;
     }
+
+    p {
+      color: #fff;
+    }
   }
 
   .news-item {
@@ -1919,8 +1929,6 @@ $dark-blue: #252f87;
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid #d9d9d9;
-  padding-bottom: 35px;
 
   img {
     width: 100%;
@@ -1928,6 +1936,11 @@ $dark-blue: #252f87;
     object-fit: cover;
     object-position: center;
   }
+}
+
+.section-block {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 70px;
 }
 
 .list-products {
@@ -2015,6 +2028,14 @@ $dark-blue: #252f87;
         border-bottom: 3px solid transparent;
         white-space: nowrap;
         transition: 0.3s;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
 
         &.active {
           color: #283678;
@@ -2996,6 +3017,23 @@ $dark-blue: #252f87;
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
+
+.steel-tabs-sidebar-wrapper {
+  position: sticky;
+  top: 100px; // nếu navbar cao khoảng 80–100px
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  a {
+    &.active {
+      font-weight: bold;
+      color: #f7941e;
+    }
+  }
+}
+
+
 
 @media (max-width: 991.98px) {
   .navbar-collapse {

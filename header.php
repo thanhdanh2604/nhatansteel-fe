@@ -26,8 +26,8 @@
     <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button> -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -36,8 +36,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="sanpham-dichvu.php" role="button" data-bs-toggle="dropdown">Sản phẩm & Dịch vụ</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Sản phẩm 1</a></li>
-            <li><a class="dropdown-item" href="#">Dịch vụ 1</a></li>
+            <li><a class="dropdown-item" href="#">Sản phẩm</a></li>
+            <li><a class="dropdown-item" href="#">Dịch vụ</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

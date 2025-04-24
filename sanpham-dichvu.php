@@ -22,15 +22,15 @@
         <!-- Tabs -->
         <div class="steel-tabs d-flex mb-5">
             <div class="container">
-                <button class="tab-btn" data-tab="product">SẢN PHẨM</button>
-                <button class="tab-btn active" data-tab="service">DỊCH VỤ</button>
+                <button class="tab-btn active" data-tab="product">SẢN PHẨM</button>
+                <button class="tab-btn" data-tab="service">DỊCH VỤ</button>
             </div>
         </div>
 
         <div class="container">
             <!-- Content -->
             <div class="tab-contents position-relative">
-                <div class="tab-pane d-none" id="product">
+                <div class="tab-pane active" id="product">
                     <h2 class="title">Tính ứng dụng của kết cấu thép</h2>
                     <div class="box-product-info">
                         <div class="row align-items-center mt-4">
@@ -48,18 +48,20 @@
                         </div>
                     </div>
 
-                    <section class="about-wrapper py-5">
+                    <section class="about-wrapper products-wrapper py-5">
                         <div class="container">
                             <div class="row">
                                 <!-- Sidebar -->
                                 <div class="col-md-3 mb-4">
-                                    <ul class="steel-tabs-sidebar list-unstyled">
-                                        <li><a class="active" href="#mo-hinh">Mô hình nhà xưởng tiêu chuẩn</a></li>
-                                        <li><a href="#hethong-khung">Hệ thống khung tiêu chuẩn</a></li>
-                                        <li><a href="#chitiet-ketcau">Chi tiết kết cấu</a></li>
-                                        <li><a href="#hethong-baoche">Hệ thống bao che hoàn thiện</a></li>
-                                        <li><a href="#phu-kien">Phụ kiện</a></li>
-                                    </ul>
+                                    <div class="steel-tabs-sidebar-wrapper">
+                                        <ul class="steel-tabs-sidebar list-unstyled">
+                                            <li><a class="active" href="#mo-hinh">Mô hình nhà xưởng tiêu chuẩn</a></li>
+                                            <li><a href="#hethong-khung">Hệ thống khung tiêu chuẩn</a></li>
+                                            <li><a href="#chitiet-ketcau">Chi tiết kết cấu</a></li>
+                                            <li><a href="#hethong-baoche">Hệ thống bao che hoàn thiện</a></li>
+                                            <li><a href="#phu-kien">Phụ kiện</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
 
                                 <!-- Content -->
@@ -139,7 +141,7 @@
 
                                     <div id="chitiet-ketcau" class="section-block mb-5">
                                         <h2 class="title">Chi tiết kết cấu</h2>
-                                        <section class="structure-detail-section py-5">
+                                        <section class="structure-detail-section py-5 pt-0">
                                             <div class="container">
                                                 <!-- Tabs Navigation -->
                                                 <div class="nav-tabs-scroll">
@@ -338,7 +340,7 @@
 
                 </div>
 
-                <div class="tab-pane active" id="service">
+                <div class="tab-pane d-none" id="service">
 
                     <section class="about-wrapper p-0">
                         <div class="container">
